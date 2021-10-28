@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PersonManagerAPI.Data;
+using PersonManagerAPI.Persistence;
 
 namespace PersonManagerAPI
 {
@@ -27,6 +29,9 @@ namespace PersonManagerAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSingleton<FileContext>();
+            services.AddSingleton<IAdultService, AdultManager>();
+            services.AddScoped<IUserService, UserManager>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "PersonManagerAPI", Version = "v1"});

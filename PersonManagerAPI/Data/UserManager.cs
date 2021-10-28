@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Threading.Tasks;
 using PersonManagerAPI.Models;
 
 namespace PersonManagerAPI.Data
@@ -52,7 +53,7 @@ namespace PersonManagerAPI.Data
         }
 
 
-        public User ValidateUser(string username, string password)
+        public async Task<User> ValidateUser(string username, string password)
         {
             User first = users.FirstOrDefault(user => user.Username.Equals(username));
 

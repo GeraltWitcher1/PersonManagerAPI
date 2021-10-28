@@ -1,9 +1,10 @@
-﻿using PersonManagerAPI.Models;
+﻿using System.Threading.Tasks;
+using PersonManagerAPI.Models;
 
 namespace PersonManagerAPI.Data
 {
     public interface IUserService
     {
-        User ValidateUser(string username, string password);
+        Task<User> ValidateUser(string username, string password);
     }
 }

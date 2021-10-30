@@ -58,7 +58,7 @@ namespace PersonManagerAPI.Data
             toUpdate.Height = adult.Height;
             toUpdate.HairColor = adult.HairColor;
             fileContext.SaveChanges();
-            return adult;
+            return toUpdate;
         }
 
 

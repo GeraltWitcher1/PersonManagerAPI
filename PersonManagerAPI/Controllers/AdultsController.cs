@@ -10,11 +10,11 @@ namespace PersonManagerAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AdultController : ControllerBase
+    public class AdultsController : ControllerBase
     {
         private IAdultService adultManager;
 
-        public AdultController(IAdultService adultManager)
+        public AdultsController(IAdultService adultManager)
         {
             this.adultManager = adultManager;
         }
@@ -22,7 +22,7 @@ namespace PersonManagerAPI.Controllers
         
         [HttpGet]
         public async Task<ActionResult<IList<Adult>>>
-            GetTodos([FromQuery] int? id)
+            GetAdults([FromQuery] int? id)
         {
             try
             {
@@ -79,6 +79,7 @@ namespace PersonManagerAPI.Controllers
         }
         
         [HttpPatch]
+        [Route("{id:int}")]
         public async Task<ActionResult<Adult>> UpdateAdult([FromBody] Adult adult)
         {
             try

@@ -20,7 +20,6 @@ namespace PersonManagerAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<User>> ValidateUser([FromQuery] string username, [FromQuery] string password)
         {
-            Console.WriteLine("Here");
             try
             {
                 var user = await userService.ValidateUser(username, password);
@@ -28,7 +27,7 @@ namespace PersonManagerAPI.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e.Message);
+                return NotFound(e.Message);
             }
         }
     }

@@ -79,7 +79,7 @@ namespace PersonManagerAPI.Controllers
         }
         
         [HttpPatch]
-        public async Task<ActionResult<Adult>> UpdateTodo([FromBody] Adult adult)
+        public async Task<ActionResult<Adult>> UpdateAdult([FromBody] Adult adult)
         {
             try
             {

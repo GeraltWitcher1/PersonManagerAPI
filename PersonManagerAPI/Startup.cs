@@ -29,8 +29,8 @@ namespace PersonManagerAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<FileContext>();
-            services.AddSingleton<IAdultService, AdultManager>();
+            services.AddDbContext<PersonDbContext>();
+            services.AddSingleton<IAdultService, AdultRepo>();
             services.AddScoped<IUserService, UserManager>();
             services.AddSwaggerGen(c =>
             {

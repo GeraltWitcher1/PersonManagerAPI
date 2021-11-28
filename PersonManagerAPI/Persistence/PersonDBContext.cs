@@ -6,6 +6,7 @@ namespace PersonManagerAPI.Persistence
     public class PersonDbContext : DbContext
     {
         public DbSet<Adult> Adults { get; set; }
+        public DbSet<User> Users { get; set; }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -30,8 +30,8 @@ namespace PersonManagerAPI
         {
             services.AddControllers();
             services.AddDbContext<PersonDbContext>();
-            services.AddSingleton<IAdultService, AdultRepo>();
-            services.AddScoped<IUserService, UserManager>();
+            services.AddScoped<IAdultService, AdultRepo>();
+            services.AddScoped<IUserService, UserRepo>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "PersonManagerAPI", Version = "v1"});

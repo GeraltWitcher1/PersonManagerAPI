@@ -79,13 +79,13 @@ namespace PersonManagerAPI
                     },
                     new()
                     {
-                        FirstName = "Jake",
-                        LastName = "Paul",
-                        Age = 34,
+                        FirstName = "Ronnie James",
+                        LastName = "Dio",
+                        Age = 60,
                         EyeColor = "Green",
                         HairColor = "Brown",
-                        Height = 185,
-                        Weight = 78,
+                        Height = 165,
+                        Weight = 60,
                         Sex = "M",
                         
                         JobTitle = chef,
